@@ -1,35 +1,18 @@
 <template>
   <div class="home">
-    <li v-for="commute in commutes" :key="commute.person">
-      <Commute :person="commute.person" :start="commute.start" :destination="commute.destination" />
-    </li>
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Commute from "@/components/Commute.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    Commute
-  },
-  data: function() {
-    return {
-      commutes: [
-        {
-          person: "Maria",
-          start: "Baar",
-          destination: "Emmenbrücke"
-        },
-        {
-          person: "Hanna",
-          start: "Zürich",
-          destination: "Emmenbrücke"
-        }
-      ]
-    };
+    HelloWorld
   }
-};
+}
 </script>
