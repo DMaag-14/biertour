@@ -1,14 +1,15 @@
 <template>
   <div class="home">
-    <li v-for="commute in commutes" :key="commute.person">
-      <Commute :person="commute.person" :start="commute.start" :destination="commute.destination" />
-    </li>
+    <div v-for="commute in commutes" :key="commute.person">
+      <Commute :person="commute.fields.commuter" :start="commute.fields.startLocationName" :destination="commute.fields.endLocationName" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Commute from "@/components/Commute.vue";
+import contentfulClient from "@/modules/contenful.js";
 
 export default {
   name: "Home",
@@ -17,19 +18,15 @@ export default {
   },
   data: function() {
     return {
-      commutes: [
-        {
-          person: "Maria",
-          start: "Baar",
-          destination: "Emmenbrücke"
-        },
-        {
-          person: "Hanna",
-          start: "Zürich",
-          destination: "Emmenbrücke"
-        }
-      ]
+      commutes: []
     };
+  },
+  created: async function() {
+    let result = await contentfulClient
+      .getEntries({
+        content_type: "commute"
+      });
+    this.commutes =  result.items;
   }
 };
 </script>
