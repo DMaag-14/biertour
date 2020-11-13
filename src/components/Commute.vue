@@ -4,6 +4,9 @@
       {{person}}'s commute
     </h2>
     <p>
+      <img :src="person.fields.commuterImage.fields.media.url" />
+    </p>
+    <p>
       This is <span class="person">{{person}}</span>
     </p>
     <p>
@@ -18,7 +21,8 @@ export default {
   props: {
     person: String,
     start: String,
-    destination: String
+    destination: String,
+    image: String
   }
 };
 </script>
