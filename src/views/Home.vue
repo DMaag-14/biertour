@@ -1,12 +1,12 @@
 // Startmenu der Webbseite
 <template>
   <div class="home">
-    <router-link to="/Map">
+    <router-link to="/map">
       <div class="map1">
       </div>
     </router-link>
 
-    <router-link to="/NextContent">
+    <router-link to="/nextContent">
       <div class="map2">
       </div>
     </router-link>
@@ -14,12 +14,10 @@
 </template>
 
 <script>
-
 </script>
 
 
 // Hier CSS Elemente und Style für Home/Startseite
-
 <style>
 
 .map1 {
