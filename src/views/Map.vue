@@ -1,3 +1,4 @@
+//Mapseite --> Mapbox richtig integrieren und scrolling machen
 <template>
   <div class="about">
     <h1>This is the Map Page</h1>
