@@ -87,6 +87,7 @@ export default {
 
 .content {
   display: flex;
+  flex-direction: column;
   width: 60%;
   margin-left: 40%;
 }
