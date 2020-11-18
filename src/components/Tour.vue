@@ -1,8 +1,11 @@
 <template>
   <div class="section-bar">
     <div class="bar-header" style="background: url(''), #333">
-      <h2>{{barTitel}}</h2>
-      <p>{{barRandomFact}}</p>
+      <div class="bar-header-text">
+        <p class="bar-stop">Hier steht ein Text</p>
+        <h2>{{barTitel}}</h2>
+      </div>
+      <p class="bar-random-fact">{{barRandomFact}}</p>
       <img src="" alt="Bar Logo" class="bar-logo">
     </div>
 
@@ -29,16 +32,54 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!-- <style scoped lang="scss"> !-->
 <style scoped >
+
+.section-bar {
+  margin: 200px 0px;
+} 
+
 .bar-header {
   height: 500px;
   position: relative;
 }
 
-.bar-header h2 {
+.bar-header-text {
   position: absolute;
-  top: 0%;
+  top: -12%;
   left: 5%;
 }
+
+.bar-header .bar-header-text h2 {
+  text-shadow: 0px 4px 8px rgba(19, 19, 23, 0.4);
+  margin: 0;
+}
+
+.bar-header .bar-header-text .bar-stop {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--black-default-60);
+;
+  margin: 0;
+}
+
+.bar-header .bar-random-fact {
+  position: absolute;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  max-width: 450px;
+  font-size: .875rem;
+  color: var(--yellow-tint-20);
+  bottom: 0%;
+  left: -1%;
+  line-height: 130%;
+}
+
+
+.bar-body {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+}
+
+
 
 
 

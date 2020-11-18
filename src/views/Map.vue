@@ -1,9 +1,9 @@
 //Mapseite --> Mapbox richtig integrieren und scrolling machen
 <template>
-  <div class="about">
-    <h1>This is the Map Page</h1>
+  <div class="layout-container">
     <div ref="container" class="map"></div>
     <div class="content">
+      <h1>This is the Map Page</h1>
       <div v-for="bar in bars" :key="bar">
         <Bar :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
       </div>
@@ -68,21 +68,24 @@ export default {
 </script>
 
 <style>
+.layout-container {
+  display: block;
+  width: 100%;
+}
+
 @import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");
 .map {
-  float: left;
-  height: 60%;
-  width: 30%;
+  height: 100vh;
+  width: 35%;
+  display: block;
   position: fixed;
-  left: 10%;
 }
 
 .content {
-  float: left;
-  height: 100%;
-  width: 49%;
-  position: absolute;
-  left: 51%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 40%;
 }
 
 </style>

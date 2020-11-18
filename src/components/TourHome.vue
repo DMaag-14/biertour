@@ -21,17 +21,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.person {
-  color: rgb(103, 189, 189);
-  font-weight: bold;
-}
+<style scoped>
 
-.tour {
-  float: left;
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  background-color: gray;
-}
 </style>

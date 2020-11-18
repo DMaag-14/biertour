@@ -13,6 +13,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
+:root {
+  --yellow-default: #DAB637;
+  --yellow-tint-20: #F8F0D7;
+  --yellow-tint-60: #E9D387;
+  --yellow-shadow-20: #8B762A;
+  --yellow-shadow-60: #3D361C;
+  --white: #fff;
+  --black-default: #000;
+  --black-background: #161615;
+  --black-default-20: #CCCCCC;
+  --black-default-60: #666666;
+  --black-default-80: #333333;
+
+}
 
 html {
   font-size: 16px;
@@ -22,11 +36,13 @@ html, body {
   font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #161615;
+  background-color: var(--black-background);
   font-size: 1rem;
   line-height: 160%;
   text-align: left;
-  color: #fff;
+  color: var(--white);
+  padding: 0;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,6 +79,9 @@ h6 {
 
 #nav {
   padding: 30px;
+  display: block;
+  position: fixed;
+  z-index: 100;
 }
 
 #nav a {
