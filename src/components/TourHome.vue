@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 .person {
   color: rgb(103, 189, 189);
-  font-weight: bold;;
+  font-weight: bold;
 }
 
 .tour {
