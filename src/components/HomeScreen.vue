@@ -1,8 +1,8 @@
 <template>
   <div class="tour">
-    <h2>
-      {{tourTitel}}
-    </h2>
+    <h1>
+      {{titelStartseite}}
+    </h1>
     <p>
       {{tourBeschreibung}}
     </p>
@@ -11,10 +11,11 @@
 
 <script>
 export default {
-  name: "Tour",
+  name: "Startseite",
   props: {
-    tourTitel: String,
-    tourBeschreibung: String,
+    titelStartseite: String,
+    }
+
   }
 };
 </script>

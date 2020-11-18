@@ -3,8 +3,8 @@
   <div class="home">
     <router-link to="/map">
       <div ref="container" class="tour"></div>
-      <div v-for="tour in tours" :key="tour">
-          <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
+      <div v-for="startseite in startseiten" :key="startseite">
+          <Startseite :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
       </div>
     </router-link>
   </div>
@@ -18,7 +18,7 @@ export default {
   
 name: "home",
 components: {
-    Tour
+    Startseite
   },
   data: function() {
     return {
