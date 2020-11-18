@@ -27,7 +27,7 @@ export default {
     const map = new mapboxgl.Map({
       container: this.$refs.container,
       style: "mapbox://styles/schaengu/ckhg2ts590dms19ozwe4g7cuw",
-      center: [46.9479121, 7.4485031],
+      center: [7.4485031, 46.9479121],
       zoom: 9
     });
 
