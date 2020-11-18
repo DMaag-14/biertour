@@ -1,6 +1,6 @@
 <template>
   <div class="bar">
-    <div class="bar__header" style="background: url(''), #333">
+    <div class="section-full bar__header" style="background: url(''), #333">
       <div class="bar__header__text">
         <p class="bar__header__stop">{{barSubtitel}}</p>
         <h2>{{barTitel}}</h2>
@@ -9,7 +9,7 @@
       <img src="" alt="Bar Logo" class="bar__header__logo">
     </div>
 
-    <div class="bar__body">
+    <div class="section-grid bar__body">
       <p>{{barBeschreibung}}</p>
     </div>
   </div>
@@ -35,16 +35,12 @@ export default {
 
 .bar {
   margin: 200px 0px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: auto;
 }
 
 .bar__header {
   height: 500px;
   position: relative;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  display: block;
 }
 
 .bar__header__text {
@@ -77,13 +73,10 @@ export default {
   line-height: 130%;
 }
 
-.bar__body {
+.section-grid.bar__body p {
   grid-column-start: 1;
   grid-column-end: 6;
+  padding: 40px 0px;
 }
-
-
-
-
 
 </style>

@@ -3,9 +3,9 @@
   <div class="layout-container">
     <div ref="container" class="map"></div>
     <div class="content">
-      <div class="content__section">
-        <h1>Hier würde Altstadttour stehen</h1>
-        <p></p>
+      <div class="section-grid">
+        <h1>Altstadttour</h1>
+        <p>Im Jahr 1191 wurde die Stadt Bern auf der Halbinsel, umgeben von der Aareschlaufe, von Herzog Berchtold V. von Zähringen gegründet. Die Zähringerstadt wurde ab 1200 etappenweise vergrössert: Im ersten Schritt von der Burg Nydegg bis zum Zytglogge (Zeitglockenturm), danach folgte die Stadterweiterung bis zum Käfigturm und noch etwas später kamen der Nydeggstalden und die Mattenenge hinzu.</p>
       </div>
       <div v-for="bar in bars" :key="bar">
         <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
@@ -28,7 +28,9 @@ export default {
       container: this.$refs.container,
       style: "mapbox://styles/schaengu/ckhg2ts590dms19ozwe4g7cuw",
       center: [7.4485031, 46.9479121],
-      zoom: 9
+      pitch: 60, 
+      bearing: 60,
+      zoom: 16
     });
 
     // DARK MAP
@@ -96,9 +98,20 @@ export default {
   margin-left: 40%;
 }
 
-.content h1{
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  padding-right: 8%;
+}
+
+.section-grid h1{
   grid-column-start: 1;
-  grid-column-end: 7;
+  grid-column-end: -1;
+}
+
+.section-grid p {
+  grid-column-start: 4;
+  grid-column-end: -1;
 }
 
 </style>
