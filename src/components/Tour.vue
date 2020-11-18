@@ -36,7 +36,8 @@ export default {
 .bar {
   margin: 200px 0px;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
 } 
 
 .bar__header {
@@ -75,7 +76,6 @@ export default {
   left: -1%;
   line-height: 130%;
 }
-
 
 .bar__body {
   grid-column-start: 1;

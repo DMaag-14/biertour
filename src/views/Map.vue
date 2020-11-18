@@ -3,7 +3,10 @@
   <div class="layout-container">
     <div ref="container" class="map"></div>
     <div class="content">
-      <h1>Hier würde Altstadttour stehen</h1>
+      <div class="content__section">
+        <h1>Hier würde Altstadttour stehen</h1>
+        <p></p>
+      </div>
       <div v-for="bar in bars" :key="bar">
         <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
       </div>
@@ -77,8 +80,6 @@ export default {
   width: 100%;
 }
 
-
-
 @import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");
 .map {
   height: 100vh;
@@ -92,6 +93,11 @@ export default {
   flex-direction: column;
   width: 60%;
   margin-left: 40%;
+}
+
+.content h1{
+  grid-column-start: 1;
+  grid-column-end: 7;
 }
 
 </style>
