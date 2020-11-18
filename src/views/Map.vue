@@ -3,9 +3,9 @@
   <div class="layout-container">
     <div ref="container" class="map"></div>
     <div class="content">
-      <h1>This is the Map Page</h1>
+      <h1>Hier würde Altstadttour stehen</h1>
       <div v-for="bar in bars" :key="bar">
-        <Bar :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
+        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
       </div>
     </div>
   </div>
@@ -76,6 +76,8 @@ export default {
   display: block;
   width: 100%;
 }
+
+
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");
 .map {
