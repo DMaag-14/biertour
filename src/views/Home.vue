@@ -4,14 +4,14 @@
     <router-link to="/map">
       <div ref="container" class="tour"></div>
       <div v-for="startseite in startseite" :key="startseite">
-          <Startseite :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
+          <Startseite :tourTitel="startseite.fields.titelStartseite" :tourBeschreibung="startseite.fields.leadStartseite" />
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
-import Tour from "@/components/TourHome.vue";
+import Startseite from "@/components/HomeScreen.vue";
 import contentfulClient from "@/modules/contentful.js";
 
 export default {
@@ -22,15 +22,15 @@ components: {
   },
   data: function() {
     return {
-      tours: []
+      startseite: []
     };
   },
   created: async function() {
     let result = await contentfulClient
       .getEntries({
-        content_type: "tour"
+        content_type: "startseite"
       });
-    this.tours =  result.items;
+    this.startseite =  result.items;
   }
 }
 </script>
