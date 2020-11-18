@@ -2,7 +2,7 @@
   <div class="section-bar">
     <div class="bar-header" style="background: url(''), #333">
       <div class="bar-header-text">
-        <p class="bar-stop">Hier steht ein Text</p>
+        <p class="bar-stop">{{barSubtitel}}</p>
         <h2>{{barTitel}}</h2>
       </div>
       <p class="bar-random-fact">{{barRandomFact}}</p>
@@ -25,6 +25,7 @@ export default {
     barBild: String,
     barRandomFact: String,
     barLocation: Object,
+    barSubtitel: String
   }
 };
 </script>
@@ -35,11 +36,15 @@ export default {
 
 .section-bar {
   margin: 200px 0px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 } 
 
 .bar-header {
   height: 500px;
   position: relative;
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
 
 .bar-header-text {
@@ -57,7 +62,6 @@ export default {
   text-transform: uppercase;
   font-size: 1rem;
   color: var(--black-default-60);
-;
   margin: 0;
 }
 
@@ -75,8 +79,8 @@ export default {
 
 
 .bar-body {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
+  grid-column-start: 1;
+  grid-column-end: 6;
 }
 
 

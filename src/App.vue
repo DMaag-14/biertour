@@ -25,7 +25,6 @@
   --black-default-20: #CCCCCC;
   --black-default-60: #666666;
   --black-default-80: #333333;
-
 }
 
 html {

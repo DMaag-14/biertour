@@ -20,13 +20,17 @@ import getCoordinatesFromGpxFile from "@/modules/gpx-utilities.js";
 export default {
   name: "Map",
   mounted: async function() {
-    mapboxgl.accessToken = "pk.eyJ1IjoiZG9taW1pIiwiYSI6ImNraDNlcmN5cTA5b2QycnF5eTBoOHlxbjkifQ.Hrc4LbKoBzKq85tXedZ8SA";
+    mapboxgl.accessToken = "pk.eyJ1Ijoic2NoYWVuZ3UiLCJhIjoiY2toM2U3dWhtMDB0MjJ5cXYzYThrcXM3cSJ9.o8sv3FDmYG7dNk-0JXVBhw";
     const map = new mapboxgl.Map({
       container: this.$refs.container,
-      style: "mapbox://styles/domimi/ckhknfjr43zn119ldctqkon8y",
+      style: "mapbox://styles/schaengu/ckhg2ts590dms19ozwe4g7cuw",
       center: [46.9479121, 7.4485031],
       zoom: 9
     });
+
+    // DARK MAP
+    // "pk.eyJ1IjoiZG9taW1pIiwiYSI6ImNraDNlcmN5cTA5b2QycnF5eTBoOHlxbjkifQ.Hrc4LbKoBzKq85tXedZ8SA"
+    // "mapbox://styles/domimi/ckhknfjr43zn119ldctqkon8y"
 
     map.on("load", async function(){
       let result = await contentfulClient
@@ -83,7 +87,6 @@ export default {
 
 .content {
   display: flex;
-  flex-direction: column;
   width: 60%;
   margin-left: 40%;
 }
