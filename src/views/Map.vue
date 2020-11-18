@@ -3,9 +3,12 @@
   <div class="layout-container">
     <div ref="container" class="map"></div>
     <div class="content">
-      <h1>This is the Map Page</h1>
+      <div class="content__section">
+        <h1>Hier würde Altstadttour stehen</h1>
+        <p></p>
+      </div>
       <div v-for="bar in bars" :key="bar">
-        <Bar :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
+        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" />
       </div>
     </div>
   </div>
@@ -24,8 +27,8 @@ export default {
     const map = new mapboxgl.Map({
       container: this.$refs.container,
       style: "mapbox://styles/schaengu/ckhg2ts590dms19ozwe4g7cuw",
-      center: [7.4485031, 46.9479121],
-      zoom: 15
+      center: [46.9479121, 7.4485031],
+      zoom: 9
     });
 
     // DARK MAP
@@ -72,6 +75,7 @@ export default {
 </script>
 
 <style>
+
 .layout-container {
   display: block;
   width: 100%;
@@ -90,6 +94,11 @@ export default {
   flex-direction: column;
   width: 60%;
   margin-left: 40%;
+}
+
+.content h1{
+  grid-column-start: 1;
+  grid-column-end: 7;
 }
 
 </style>

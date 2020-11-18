@@ -1,18 +1,17 @@
 <template>
-  <div class="section-bar">
-    <div class="bar-header" style="background: url(''), #333">
-      <div class="bar-header-text">
-        <p class="bar-stop">{{barSubtitel}}</p>
+  <div class="bar">
+    <div class="bar__header" style="background: url(''), #333">
+      <div class="bar__header__text">
+        <p class="bar__header__stop">{{barSubtitel}}</p>
         <h2>{{barTitel}}</h2>
       </div>
-      <p class="bar-random-fact">{{barRandomFact}}</p>
-      <img src="" alt="Bar Logo" class="bar-logo">
+      <p class="bar__header__random-fact">{{barRandomFact}}</p>
+      <img src="" alt="Bar Logo" class="bar__header__logo">
     </div>
 
-    <div class="bar-body">
+    <div class="bar__body">
       <p>{{barBeschreibung}}</p>
     </div>
-    
   </div>
 </template>
 
@@ -34,38 +33,39 @@ export default {
 <!-- <style scoped lang="scss"> !-->
 <style scoped >
 
-.section-bar {
+.bar {
   margin: 200px 0px;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-} 
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+}
 
-.bar-header {
+.bar__header {
   height: 500px;
   position: relative;
   grid-column-start: 1;
   grid-column-end: -1;
 }
 
-.bar-header-text {
+.bar__header__text {
   position: absolute;
   top: -12%;
   left: 5%;
 }
 
-.bar-header .bar-header-text h2 {
+.bar__header .bar__header__text h2 {
   text-shadow: 0px 4px 8px rgba(19, 19, 23, 0.4);
   margin: 0;
 }
 
-.bar-header .bar-header-text .bar-stop {
+.bar__header .bar__header__text .bar__header__stop {
   text-transform: uppercase;
   font-size: 1rem;
   color: var(--black-default-60);
   margin: 0;
 }
 
-.bar-header .bar-random-fact {
+.bar__header .bar__header__random-fact {
   position: absolute;
   transform-origin: bottom left;
   transform: rotate(-90deg);
@@ -77,8 +77,7 @@ export default {
   line-height: 130%;
 }
 
-
-.bar-body {
+.bar__body {
   grid-column-start: 1;
   grid-column-end: 6;
 }
