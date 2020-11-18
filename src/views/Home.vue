@@ -3,7 +3,7 @@
   <div class="home">
     <router-link to="/map">
       <div ref="container" class="tour"></div>
-      <div v-for="startseite in startseiten" :key="startseite">
+      <div v-for="startseite in startseite" :key="startseite">
           <Startseite :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
       </div>
     </router-link>
