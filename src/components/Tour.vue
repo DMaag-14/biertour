@@ -38,7 +38,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: auto;
-} 
+}
 
 .bar__header {
   height: 500px;
