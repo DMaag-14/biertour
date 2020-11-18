@@ -2,9 +2,9 @@
 <template>
   <div class="home">
     <router-link to="/map">
-      <div ref="container" class="tour"></div>
-      <div v-for="startseite in startseite" :key="startseite">
-          <Startseite :tourTitel="startseite.fields.titelStartseite" :tourBeschreibung="startseite.fields.leadStartseite" />
+      <div ref="container" class="startseite"></div>
+      <div v-for="startseite in startseiten" :key="startseite">
+          <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" />
       </div>
     </router-link>
   </div>
@@ -22,7 +22,7 @@ components: {
   },
   data: function() {
     return {
-      startseite: []
+      startseiten: []
     };
   },
   created: async function() {
@@ -30,7 +30,7 @@ components: {
       .getEntries({
         content_type: "startseite"
       });
-    this.startseite =  result.items;
+    this.startseiten =  result.items;
   }
 }
 </script>
@@ -39,7 +39,7 @@ components: {
 // Hier CSS Elemente und Style für Home/Startseite
 <style>
 
-.tour {
+.startseite {
   float: left;
   height: 50%;
   width: 50%;
