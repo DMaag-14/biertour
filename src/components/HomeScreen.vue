@@ -1,10 +1,10 @@
 <template>
-  <div class="tour">
+  <div class="startseite">
     <h1>
       {{titelStartseite}}
     </h1>
     <p>
-      {{tourBeschreibung}}
+      {{leadStartseite}}
     </p>
   </div>
 </template>
@@ -14,8 +14,9 @@ export default {
   name: "Startseite",
   props: {
     titelStartseite: String,
-    }
-
+    subtitelStartseite: String,
+    leadStartseite: String,
+    bildStartseite: String
   }
 };
 </script>
