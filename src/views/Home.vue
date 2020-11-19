@@ -1,11 +1,21 @@
 // Startmenu der Webbseite
 <template>
   <div class="home">
+    <div ref="container" class="startseite-container">
+        <div v-for="startseite in startseiten" :key="startseite">
+            <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
+        </div>
+      </div> 
     <router-link to="/map">
-      <div ref="container" class="startseite"></div>
-      <div v-for="startseite in startseiten" :key="startseite">
-          <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" />
-      </div>
+     <div class="startseite-tour-container">
+        <div class="startseite-tour">
+          <h3>Altstadttour</h3>
+          <p>Das Hier wär när d Beschribig</p>
+        </div>
+        <div class="startseite-tour">
+          <h3>Abendspaziergang</h3>
+        </div>
+     </div>
     </router-link>
   </div>
 </template>
@@ -38,13 +48,39 @@ components: {
 
 // Hier CSS Elemente und Style für Home/Startseite
 <style>
+body{
+  height: 100vh;
+}
 
-.startseite {
-  float: left;
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  background-color: gray;
+.home{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 5%;
+}
+
+.startseite-container {
+  background-color: rgb(139, 56, 56);
+  height: 60vh;
+  display:flex;
+  align-items: flex-end;
+ 
+}
+
+.startseite-tour-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.startseite-tour{
+  background-color: #fff;
+  flex-grow: 1;
+  border-color: yellow;
+}
+
+.startseite-tour:nth-child(odd){
+  margin-right: 2%;
 }
 
 </style>
