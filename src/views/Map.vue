@@ -10,6 +10,12 @@
       <div v-for="bar in bars" :key="bar">
         <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" :barBild="bar.fields.barBild" />
       </div>
+      <!-- <div v-for="bier in biere" :key="bier">
+          <Bier :bierTitel="bar.fields.bier.fields.bierTitel" :bierAlkohol="bar.fields.bier.fields.bierAlkohol" :bierHerkunft="bar.fields.bier.fields.bierHerkunft" :bierArt="bar.fields.bier.fields.bierArt" :bierBrauerei="bar.fields.bier.fields.bierBrauerei" />
+      </div> -->
+      <!-- <div v-for="bier in biere" :key="bier">
+          <Bier :bierTitel="bier.fields.bierTitel" :bierAlkohol="bier.fields.bierAlkohol" :bierHerkunft="bier.fields.bierHerkunft" :bierArt="bier.fields.bierArt" :bierBrauerei="bier.fields.bierBrauerei" />
+      </div> -->
     </div>
     <svg>
     <clipPath id="clip-texture">
@@ -24,6 +30,7 @@
 <script>
 import mapboxgl from "mapbox-gl";
 import Bar from "@/components/Tour.vue";
+// import Bier from "@/components/Bier.vue";
 import contentfulClient from "@/modules/contentful.js";
 import getCoordinatesFromGpxFile from "@/modules/gpx-utilities.js";
 
@@ -66,11 +73,13 @@ export default {
   },
 
   components: {
-    Bar
+    Bar/* ,
+    Bier */
   },
   data: function() {
     return {
-      bars: []
+      bars: []/* ,
+      biere: [] */
     };
   },
   created: async function() {
@@ -79,7 +88,14 @@ export default {
         content_type: "bar"
       });
     this.bars =  result.items;
+
+    /* result = await contentfulClient
+      .getEntries({
+        content_type: "bier"
+      });
+    this.biere =  result.items; */
   }
+  
 };
 </script>
 

@@ -63,7 +63,7 @@ components: {
 
 
 // Hier CSS Elemente und Style für Home/Startseite
-<style>
+<style scoped>
 body{
   height: 100vh;
   background-color: var(--white);

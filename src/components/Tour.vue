@@ -10,9 +10,12 @@
     </div>
     <div class="section-grid bar__body">
       <p>{{barBeschreibung}}</p>
+      <!-- <p>{{bier[0].fields.bierTitel}}</p> -->
     </div>
-    <div v-for="bier in biere" :key="bier">
-        <Bier :bierTitel="bar.fields.bier.fields.bierTitel" :bierAlkohol="bar.fields.bier.fields.bierAlkohol" :bierHerkunft="bar.fields.bier.fields.bierHerkunft" :bierArt="bar.fields.bier.fields.bierArt" :bierBrauerei="bar.fields.bier.fields.bierBrauerei" />
+    <div class="bier__grid">
+      <div v-for="bier in biere" :key="bier">
+          <Bier :bierTitel="barBierReferenz[0].fields.bierTitel" :bierAlkohol="barBierReferenz[0].fields.bierAlkohol" :bierHerkunft="barBierReferenz[0].fields.bierHerkunft" :bierArt="barBierReferenz[0].fields.bierArt" :bierBrauerei="barBierReferenz[0].fields.bierBrauerei" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +23,7 @@
 <script>
 
 import Bier from "@/components/Bier.vue";
+import contentfulClient from "@/modules/contentful.js";
 
 export default {
   name: "Bar",
@@ -31,6 +35,7 @@ export default {
     barLocation: Object,
     barSubtitel: String,
     barLogo: Object,
+    barBierReferenz: Array
   },
   components: {
     Bier
@@ -40,6 +45,13 @@ export default {
       biere: []
     };
   },
+  created: async function() {
+    let result = await contentfulClient
+      .getEntries({
+        content_type: "bier"
+      });
+    this.biere = result.items;
+  }
 };
 
 </script>

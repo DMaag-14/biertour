@@ -44,14 +44,16 @@ export default {
 
   .bier__name {
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
     background: var(--black-default);
     padding: 1rem 2rem;
+    border-right: 4px solid var(--yellow-default);
   }
 
   .bier__name h4 {
     color: var(--white);
     text-align: right;
+    margin: 0;
   }
 
   .bier__info {
@@ -61,8 +63,14 @@ export default {
     background: var(--yellow-tint-60);
   }
 
+  .bier__info__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-
-
-
+  .bier__info__item__right {
+    text-align: right;
+  }
 </style>
