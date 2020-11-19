@@ -2,6 +2,10 @@
     <div class="bier">
       <div class="bier__name">
         <h4>{{bierTitel}}</h4>
+        <span class="detail">
+          <div class="square"></div>
+          <span class="number">{{bierNummer}}</span>
+        </span>
       </div>
       <div class="bier__info">
         <div class="bier__info__item">
@@ -28,7 +32,8 @@ export default {
     bierAlkohol: String,
     bierHerkunft: String,
     bierArt: String,
-    bierBrauerei: String
+    bierBrauerei: String,
+    bierNummer: String
   }
 };
 
@@ -48,6 +53,37 @@ export default {
     background: var(--black-default);
     padding: 1rem 2rem;
     border-right: 4px solid var(--yellow-default);
+    position: relative;
+  }
+
+  .bier__name .detail {
+    position: absolute;
+    top: -30%;
+    left: 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "overlap";
+  }
+
+  .bier__name .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.618rem;
+    color: var(--black-default);
+    grid-area: overlap;
+    justify-self: center;
+    align-self: center;
+    z-index: 10;
+  }
+
+   .bier__name .square {
+    height: 40px;
+    width: 40px;
+    background: var(--yellow-default);
+    transform: rotate(45deg);
+    grid-area: overlap;
+    justify-self: center;
+    align-self: center;
   }
 
   .bier__name h4 {
@@ -68,6 +104,16 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: var(--black-default);
+    margin-bottom: .5rem;
+  }
+
+  .bier__info__item:last-of-type {
+    margin-bottom: 0rem;
+  }
+
+  .bier__info__item span:first-child {
+    margin-right: 1rem;
   }
 
   .bier__info__item__right {

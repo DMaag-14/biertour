@@ -71,7 +71,6 @@ export default {
        });
     });
   },
-
   components: {
     Bar/* ,
     Bier */

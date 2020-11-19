@@ -13,9 +13,9 @@
       <!-- <p>{{bier[0].fields.bierTitel}}</p> -->
     </div>
     <div class="bier__grid">
-      <Bier :bierTitel="barBier1.fields.bierTitel" :bierAlkohol="barBier1.fields.bierAlkohol" :bierHerkunft="barBier1.fields.bierHerkunft" :bierArt="barBier1.fields.bierArt" :bierBrauerei="barBier1.fields.bierBrauerei" />
-      <Bier :bierTitel="barBier2.fields.bierTitel" :bierAlkohol="barBier2.fields.bierAlkohol" :bierHerkunft="barBier2.fields.bierHerkunft" :bierArt="barBier2.fields.bierArt" :bierBrauerei="barBier2.fields.bierBrauerei" />
-      <Bier :bierTitel="barBier3.fields.bierTitel" :bierAlkohol="barBier3.fields.bierAlkohol" :bierHerkunft="barBier3.fields.bierHerkunft" :bierArt="barBier3.fields.bierArt" :bierBrauerei="barBier3.fields.bierBrauerei" />
+      <Bier :bierTitel="barBier1.fields.bierTitel" :bierAlkohol="barBier1.fields.bierAlkohol" :bierHerkunft="barBier1.fields.bierHerkunft" :bierArt="barBier1.fields.bierArt" :bierBrauerei="barBier1.fields.bierBrauerei" :bierNummer="1" />
+      <Bier :bierTitel="barBier2.fields.bierTitel" :bierAlkohol="barBier2.fields.bierAlkohol" :bierHerkunft="barBier2.fields.bierHerkunft" :bierArt="barBier2.fields.bierArt" :bierBrauerei="barBier2.fields.bierBrauerei" :bierNummer="2" />
+      <Bier :bierTitel="barBier3.fields.bierTitel" :bierAlkohol="barBier3.fields.bierAlkohol" :bierHerkunft="barBier3.fields.bierHerkunft" :bierArt="barBier3.fields.bierArt" :bierBrauerei="barBier3.fields.bierBrauerei" :bierNummer="3" />
     </div>
   </div>
 </template>
@@ -129,7 +129,55 @@ img.bar__header__logo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 92%;
-  gap: 40px;
+  gap: 0px 40px;
+}
+
+.bier__grid .bier:nth-of-type(2){
+  margin-top: 60%;
+}
+
+.bier__grid .bier:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.bier__grid .bier:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.bier__grid .bier:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media (min-width: 1450px) {
+
+  .bier__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 92%;
+    gap: 80px 40px;
+  }
+
+  .bier__grid .bier:nth-of-type(2){
+    margin-top: 0;
+  }
+
+  .bier__grid .bier:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .bier__grid .bier:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .bier__grid .bier:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
 
 </style>
