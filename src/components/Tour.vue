@@ -40,10 +40,23 @@ export default {
 }
 
 .bar__header {
-  height: 500px;
+  height: 600px;
   position: relative;
   display: block;
   background-color: #333;
+  background-size: cover;
+  filter: saturate(0.3);
+}
+
+.bar__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  z-index: 1000;
 }
 
 .bar__header__text {
@@ -78,7 +91,7 @@ export default {
 
 img.bar__header__logo {
   position: absolute;
-  transform-origin: top right;
+  transform-origin: center center;
   right: -20%;
   top: 10%;
   transform: scale(0.8);
@@ -88,6 +101,7 @@ img.bar__header__logo {
   grid-column-start: 1;
   grid-column-end: 6;
   padding: 40px 0px;
+  z-index: 2000;
 }
 
 </style>

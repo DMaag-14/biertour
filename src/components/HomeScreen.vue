@@ -19,7 +19,7 @@ export default {
     titelStartseite: String,
     subtitelStartseite: String,
     leadStartseite: String,
-    bildStartseite: String
+    bildStartseite: Object
   }
 };
 </script>

@@ -3,15 +3,18 @@
   <div class="home">
     <div ref="container" class="startseite-container">
         <div v-for="startseite in startseiten" :key="startseite">
-            <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
+          <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
         </div>
     </div> 
-    <router-link to="/map">
-    <div ref="container" class="tourHome">
-          <div v-for="tour in tours" :key="tour">
-            <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
-          </div>
+
+    <div ref="container" class="startseite-tour-container">
+        <div v-for="tour in tours" :key="tour">
+          <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
+        </div>
     </div>
+      <!-- <router-link to="/map"> !-->
+    
+       <!-- </router-link> !-->
      <!-- <div class="startseite-tour-container">
         <div class="startseite-tour">
           <h3>Altstadttour</h3>
@@ -21,7 +24,6 @@
           <h3>Abendspaziergang</h3>
         </div>
      </div> -->
-    </router-link>
   </div>
 </template>
 
@@ -52,7 +54,7 @@ components: {
 
     result = await contentfulClient
       .getEntries({
-        content_type: "tours"
+        content_type: "tour"
       });
     this.tours =  result.items;
   }
@@ -66,11 +68,19 @@ body{
   height: 100vh;
 }
 
+.startseite-tour-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  color: var(--black-default);
+}
+
 .home{
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 5%;
+  margin: 0 auto;
 }
 
 .startseite-container {
