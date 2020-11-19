@@ -5,14 +5,14 @@
         <div v-for="startseite in startseiten" :key="startseite">
             <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
         </div>
-        <div ref="container" class="tourHome">
+    </div> 
+    <router-link to="/map">
+    <div ref="container" class="tourHome">
           <div v-for="tour in tours" :key="tour">
             <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
-        </div>
-        </div>
-      </div> 
-    <router-link to="/map">
-     <div class="startseite-tour-container">
+          </div>
+    </div>
+     <!-- <div class="startseite-tour-container">
         <div class="startseite-tour">
           <h3>Altstadttour</h3>
           <p>Das Hier wär när d Beschribig</p>
@@ -20,7 +20,7 @@
         <div class="startseite-tour">
           <h3>Abendspaziergang</h3>
         </div>
-     </div>
+     </div> -->
     </router-link>
   </div>
 </template>
@@ -81,7 +81,11 @@ body{
  
 }
 
-.startseite-tour-container{
+.tourHome{
+  height: 200px;
+}
+
+/* .startseite-tour-container{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -90,11 +94,10 @@ body{
 .startseite-tour{
   background-color: #fff;
   flex-grow: 1;
-  border-color: yellow;
 }
 
 .startseite-tour:nth-child(odd){
   margin-right: 2%;
-}
+} */
 
 </style>
