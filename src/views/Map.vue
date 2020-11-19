@@ -70,7 +70,58 @@ export default {
         }
        });
     });
+    let result = await contentfulClient
+    .getEntries({
+       content_type: "bar"
+    });
+    let barContainer = result.items;
+    let activeBarId = barContainer[0].fields.barTitel;
+
+    window.onscroll = function(){
+      //console.log("es scrollt");
+      for(var i = 0; i < barContainer.length; i++){
+        var barId = barContainer[i].fields.barTitel;
+        //var bar = barContainer[i];
+        //console.log(barId);
+        var element = document.getElementById(barId);
+        var bounds = element.getBoundingClientRect();
+        if(bounds.top < window.innerHeight && bounds.bottom > 0){
+          if(barId === activeBarId){
+            break;
+          }else{
+            activeBarId = barId;
+            let lon = barContainer[i].fields.barLocation.lon;
+            let lan = barContainer[i].fields.barLocation.lat;
+            map.flyTo({center: [lon, lan], zoom: 16.5});
+            console.log(lon + " , " + lan);
+            var geojson = {
+                type: "FeatureCollection",
+                features: [{
+                  type: "Feature",
+                  geometry: {
+                    type: "Point",
+                    coordinates: [lon, lan]
+                  },
+                  properties: {
+                    title: barId,
+                  }
+                }]
+            };
+            geojson.features.forEach(function(marker){
+              var el = document.createElement('div');
+              el.className = "marker";
+
+              new mapboxgl.Marker(el)
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+            }); 
+            break;
+          }          
+        }
+      }
+    }
   },
+
   components: {
     Bar/* ,
     Bier */
@@ -142,6 +193,12 @@ body {
 .section-grid p {
   grid-column-start: 4;
   grid-column-end: -1;
+}
+.marker {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 </style>

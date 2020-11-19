@@ -1,5 +1,5 @@
 <template>
-  <div class="bar">
+  <div class="bar" :id="barTitel">
     <div class="section-full bar__header" :style="{ backgroundImage: `url(${barBild.fields.file.url})` }">
       <div class="bar__header__text">
         <p class="bar__header__stop">{{barSubtitel}}</p>
