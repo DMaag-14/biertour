@@ -9,7 +9,7 @@
 
     <div ref="container" class="startseite-tour-container">
         <div v-for="tour in tours" :key="tour">
-          <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
+          <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
         </div>
     </div>
       <!-- <router-link to="/map"> !-->
@@ -66,6 +66,7 @@ components: {
 <style>
 body{
   height: 100vh;
+  background-color: var(--white);
 }
 
 .startseite-tour-container{
@@ -74,6 +75,7 @@ body{
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   color: var(--black-default);
+  padding: 2% 0;
 }
 
 .home{
@@ -84,10 +86,11 @@ body{
 }
 
 .startseite-container {
-  background-color: rgb(139, 56, 56);
+  background-color: rgb(209, 209, 209);
   height: 60vh;
   display:flex;
   align-items: flex-end;
+ 
  
 }
 
