@@ -11,11 +11,16 @@
     <div class="section-grid bar__body">
       <p>{{barBeschreibung}}</p>
     </div>
-    
+    <div v-for="bier in biere" :key="bier">
+        <Bier :bierTitel="bar.fields.bier.fields.bierTitel" :bierAlkohol="bar.fields.bier.fields.bierAlkohol" :bierHerkunft="bar.fields.bier.fields.bierHerkunft" :bierArt="bar.fields.bier.fields.bierArt" :bierBrauerei="bar.fields.bier.fields.bierBrauerei" />
+    </div>
   </div>
 </template>
 
 <script>
+
+import Bier from "@/components/Bier.vue";
+
 export default {
   name: "Bar",
   props: {
@@ -26,7 +31,15 @@ export default {
     barLocation: Object,
     barSubtitel: String,
     barLogo: Object,
-  }
+  },
+  components: {
+    Bier
+  },
+  data: function() {
+    return {
+      biere: []
+    };
+  },
 };
 
 </script>
@@ -83,7 +96,7 @@ export default {
   transform: rotate(-90deg);
   max-width: 450px;
   font-size: .875rem;
-  color: var(--yellow-tint-20);
+  color: var(--yellow-tint-60);
   bottom: 0%;
   left: -1%;
   line-height: 130%;
@@ -92,9 +105,10 @@ export default {
 img.bar__header__logo {
   position: absolute;
   transform-origin: center center;
-  right: -20%;
-  top: 10%;
-  transform: scale(0.8);
+  right: -40%;
+  top: 40%;
+  transform: scale(0.8) rotate(-6deg);
+  opacity: 0.6;
 }
 
 .section-grid.bar__body p {
@@ -102,6 +116,7 @@ img.bar__header__logo {
   grid-column-end: 6;
   padding: 40px 0px;
   z-index: 2000;
+  color: var(--black-default-20);
 }
 
 </style>

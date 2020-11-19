@@ -87,6 +87,8 @@ export default {
 
 body {
   overflow-x: hidden;
+  color: var(--white);
+  background-color: var(--black-background);
 }
 
 .layout-container {

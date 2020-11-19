@@ -35,11 +35,9 @@ html, body {
   font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--black-background);
   font-size: 1rem;
   line-height: 160%;
   text-align: left;
-  color: var(--white);
   padding: 0;
   margin: 0;
 }
