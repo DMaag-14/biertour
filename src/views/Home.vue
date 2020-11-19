@@ -5,6 +5,11 @@
         <div v-for="startseite in startseiten" :key="startseite">
             <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
         </div>
+        <div ref="container" class="tourHome">
+          <div v-for="tour in tours" :key="tour">
+            <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" />
+        </div>
+        </div>
       </div> 
     <router-link to="/map">
      <div class="startseite-tour-container">
@@ -22,17 +27,20 @@
 
 <script>
 import Startseite from "@/components/HomeScreen.vue";
+import Tour from "@/components/TourHome.vue";
 import contentfulClient from "@/modules/contentful.js";
 
 export default {
   
 name: "home",
 components: {
-    Startseite
+    Startseite,
+    Tour
   },
   data: function() {
     return {
-      startseiten: []
+      startseiten: [],
+      tours: []
     };
   },
   created: async function() {
@@ -41,6 +49,12 @@ components: {
         content_type: "startseite"
       });
     this.startseiten =  result.items;
+
+    result = await contentfulClient
+      .getEntries({
+        content_type: "tours"
+      });
+    this.tours =  result.items;
   }
 }
 </script>
