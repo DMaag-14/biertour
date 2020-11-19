@@ -1,17 +1,17 @@
 <template>
   <div class="bar">
-    <div class="section-full bar__header" style="background: url(''), #333">
+    <div class="section-full bar__header" :style="{ backgroundImage: `url(${barBild.fields.file.url})` }">
       <div class="bar__header__text">
         <p class="bar__header__stop">{{barSubtitel}}</p>
         <h2>{{barTitel}}</h2>
       </div>
       <p class="bar__header__random-fact">{{barRandomFact}}</p>
-      <img :src="barLogo.fields.file.url" alt="Bar Logo" class="bar__header__logo">
+      <img :src="barLogo.fields.file.url" alt="Bar Logo" class="bar__header__logo" />
     </div>
-
     <div class="section-grid bar__body">
       <p>{{barBeschreibung}}</p>
     </div>
+    
   </div>
 </template>
 
@@ -21,13 +21,14 @@ export default {
   props: {
     barTitel: String,
     barBeschreibung: String,
-    barBild: String,
+    barBild: Object,
     barRandomFact: String,
     barLocation: Object,
     barSubtitel: String,
-    barLogo: Object
+    barLogo: Object,
   }
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -42,6 +43,7 @@ export default {
   height: 500px;
   position: relative;
   display: block;
+  background-color: #333;
 }
 
 .bar__header__text {
@@ -72,6 +74,14 @@ export default {
   bottom: 0%;
   left: -1%;
   line-height: 130%;
+}
+
+img.bar__header__logo {
+  position: absolute;
+  transform-origin: top right;
+  right: -20%;
+  top: 10%;
+  transform: scale(0.8);
 }
 
 .section-grid.bar__body p {

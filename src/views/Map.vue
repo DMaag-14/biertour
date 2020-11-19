@@ -8,7 +8,7 @@
         <p>Im Jahr 1191 wurde die Stadt Bern auf der Halbinsel, umgeben von der Aareschlaufe, von Herzog Berchtold V. von Zähringen gegründet. Die Zähringerstadt wurde ab 1200 etappenweise vergrössert: Im ersten Schritt von der Burg Nydegg bis zum Zytglogge (Zeitglockenturm), danach folgte die Stadterweiterung bis zum Käfigturm und noch etwas später kamen der Nydeggstalden und die Mattenenge hinzu.</p>
       </div>
       <div v-for="bar in bars" :key="bar">
-        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" />
+        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" :barBild="bar.fields.barBild" />
       </div>
     </div>
     <svg>
@@ -84,6 +84,10 @@ export default {
 </script>
 
 <style>
+
+body {
+  overflow-x: hidden;
+}
 
 .layout-container {
   display: block;
