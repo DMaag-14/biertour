@@ -17,11 +17,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
-
-.startseite-tour{
-  background-color: #fff;
-  /* flex-grow: 1; */
-}
+  .startseite-tour{
+    background-color: #fff;
+    /* flex-grow: 1; */
+  }
 </style>
