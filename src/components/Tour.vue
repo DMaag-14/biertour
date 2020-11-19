@@ -6,7 +6,7 @@
         <h2>{{barTitel}}</h2>
       </div>
       <p class="bar__header__random-fact">{{barRandomFact}}</p>
-      <img src="" alt="Bar Logo" class="bar__header__logo">
+      <img :src="barLogo.fields.file.url" alt="Bar Logo" class="bar__header__logo">
     </div>
 
     <div class="section-grid bar__body">
@@ -24,7 +24,8 @@ export default {
     barBild: String,
     barRandomFact: String,
     barLocation: Object,
-    barSubtitel: String
+    barSubtitel: String,
+    barLogo: Object
   }
 };
 </script>
