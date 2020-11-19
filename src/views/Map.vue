@@ -7,8 +7,8 @@
         <h1>Altstadttour</h1>
         <p>Im Jahr 1191 wurde die Stadt Bern auf der Halbinsel, umgeben von der Aareschlaufe, von Herzog Berchtold V. von Zähringen gegründet. Die Zähringerstadt wurde ab 1200 etappenweise vergrössert: Im ersten Schritt von der Burg Nydegg bis zum Zytglogge (Zeitglockenturm), danach folgte die Stadterweiterung bis zum Käfigturm und noch etwas später kamen der Nydeggstalden und die Mattenenge hinzu.</p>
       </div>
-      <div v-for="bar in bars" :key="bar">
-        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" :barBild="bar.fields.barBild" />
+      <div v-for="bar in bars" :key="bar.fields.barTitel">
+        <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" :barBild="bar.fields.barBild" :barBier1="bar.fields.barBierReferenz[0]" :barBier2="bar.fields.barBierReferenz[1]" :barBier3="bar.fields.barBierReferenz[2]"/>
       </div>
       <!-- <div v-for="bier in biere" :key="bier">
           <Bier :bierTitel="bar.fields.bier.fields.bierTitel" :bierAlkohol="bar.fields.bier.fields.bierAlkohol" :bierHerkunft="bar.fields.bier.fields.bierHerkunft" :bierArt="bar.fields.bier.fields.bierArt" :bierBrauerei="bar.fields.bier.fields.bierBrauerei" />
@@ -88,6 +88,7 @@ export default {
         content_type: "bar"
       });
     this.bars =  result.items;
+    console.log(this.bars);
 
     /* result = await contentfulClient
       .getEntries({
@@ -104,7 +105,6 @@ export default {
 body {
   overflow-x: hidden;
   color: var(--white);
-  background-color: var(--black-background);
 }
 
 .layout-container {

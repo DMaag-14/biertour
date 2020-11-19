@@ -13,9 +13,9 @@
       <!-- <p>{{bier[0].fields.bierTitel}}</p> -->
     </div>
     <div class="bier__grid">
-      <div v-for="bier in biere" :key="bier">
-          <Bier :bierTitel="barBierReferenz[0].fields.bierTitel" :bierAlkohol="barBierReferenz[0].fields.bierAlkohol" :bierHerkunft="barBierReferenz[0].fields.bierHerkunft" :bierArt="barBierReferenz[0].fields.bierArt" :bierBrauerei="barBierReferenz[0].fields.bierBrauerei" />
-      </div>
+      <Bier :bierTitel="barBier1.fields.bierTitel" :bierAlkohol="barBier1.fields.bierAlkohol" :bierHerkunft="barBier1.fields.bierHerkunft" :bierArt="barBier1.fields.bierArt" :bierBrauerei="barBier1.fields.bierBrauerei" />
+      <Bier :bierTitel="barBier2.fields.bierTitel" :bierAlkohol="barBier2.fields.bierAlkohol" :bierHerkunft="barBier2.fields.bierHerkunft" :bierArt="barBier2.fields.bierArt" :bierBrauerei="barBier2.fields.bierBrauerei" />
+      <Bier :bierTitel="barBier3.fields.bierTitel" :bierAlkohol="barBier3.fields.bierAlkohol" :bierHerkunft="barBier3.fields.bierHerkunft" :bierArt="barBier3.fields.bierArt" :bierBrauerei="barBier3.fields.bierBrauerei" />
     </div>
   </div>
 </template>
@@ -23,7 +23,6 @@
 <script>
 
 import Bier from "@/components/Bier.vue";
-import contentfulClient from "@/modules/contentful.js";
 
 export default {
   name: "Bar",
@@ -35,7 +34,9 @@ export default {
     barLocation: Object,
     barSubtitel: String,
     barLogo: Object,
-    barBierReferenz: Array
+    barBier1: Object,
+    barBier2: Object,
+    barBier3: Object
   },
   components: {
     Bier
@@ -44,13 +45,6 @@ export default {
     return {
       biere: []
     };
-  },
-  created: async function() {
-    let result = await contentfulClient
-      .getEntries({
-        content_type: "bier"
-      });
-    this.biere = result.items;
   }
 };
 
@@ -129,6 +123,13 @@ img.bar__header__logo {
   padding: 40px 0px;
   z-index: 2000;
   color: var(--black-default-20);
+}
+
+.bier__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 92%;
+  gap: 40px;
 }
 
 </style>
