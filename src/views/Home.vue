@@ -1,4 +1,4 @@
-// Startmenu der Webbseite
+// Startmenu der Webseite
 <template>
   <div class="home">
     <div ref="container" class="startseite-container">

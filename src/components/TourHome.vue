@@ -2,7 +2,7 @@
   <div class="startseite-tour">
     <h4>{{tourTitel}}</h4>
     <p>{{tourKurzbeschrieb}}</p>
-    <button type="button">Tour ansehen</button>
+    <router-link to="/map"><button type="button">Tour ansehen</button></router-link>
   </div>
 </template>
 
@@ -22,16 +22,13 @@ export default {
   .startseite-tour{
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(19, 19, 23, 0.4);
-    /* flex-grow: 1; */
     padding: 3vh 5vh;
-    /* display: grid; */
   }
 
   .startseite-tour h4{
     margin: 0;
   }
   
-
   button{
     background-color: var(--yellow-default);
     padding: 15px 15px;

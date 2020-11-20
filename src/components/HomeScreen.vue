@@ -1,5 +1,6 @@
 <template>
   <div class="startseite">
+    <!-- <div class="bgImg" :style="{ backgroundImage: `url(${bildStartseite.fields.file.url})` }"></div> -->
     <p class="subtitelStartseite">
       {{subtitelStartseite}}
     </p>
@@ -27,7 +28,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-
+/* .bgImg{
+  width: 100vw;
+} */
 
 h1{
   margin: 0;
