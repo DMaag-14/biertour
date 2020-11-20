@@ -36,5 +36,12 @@ export default {
     letter-spacing: 0.1em;
     border: none;
     cursor: pointer;
+    will-change: transform;
+    transition: transform .4s ease-in-out;
   }
+
+  .startseite-tour button:hover {
+    transform: translateY(-2px);
+  }
+
 </style>

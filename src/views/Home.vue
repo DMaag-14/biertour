@@ -13,19 +13,8 @@
             <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
           </div>
       </div>
-        <!-- <router-link to="/map"> !-->
-      
-        <!-- </router-link> !-->
-      <!-- <div class="startseite-tour-container">
-          <div class="startseite-tour">
-            <h3>Altstadttour</h3>
-            <p>Das Hier wär när d Beschribig</p>
-          </div>
-          <div class="startseite-tour">
-            <h3>Abendspaziergang</h3>
-          </div>
-      </div> -->
     </div>
+    <div class="bg-img"></div>
   </div>
 </template>
 
@@ -69,6 +58,19 @@ components: {
 .background {
   height: 100vh;
   background-color: var(--white);
+  position: relative;
+}
+
+.bg-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.8)), url('../assets/bg.jpg');
+  filter: saturate(0.5);
 }
 
 .startseite-tour-container{
@@ -77,7 +79,7 @@ components: {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   color: var(--black-default);
-  padding: 2% 0;
+  padding: 2rem 0;
 }
 
 .home{
@@ -85,35 +87,19 @@ components: {
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
-  
+  z-index: 2;
+  position: relative;
 }
 
 .startseite-container {
-  background-color: rgb(209, 209, 209);
   height: 60vh;
-  display:flex;
+  display: flex;
   align-items: flex-end;
- 
- 
+  color: var(--white);
 }
 
 .tourHome{
   height: 200px;
 }
-
-/* .startseite-tour-container{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.startseite-tour{
-  background-color: #fff;
-  flex-grow: 1;
-}
-
-.startseite-tour:nth-child(odd){
-  margin-right: 2%;
-} */
 
 </style>

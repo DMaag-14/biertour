@@ -195,6 +195,7 @@ body {
   grid-column-start: 4;
   grid-column-end: -1;
 }
+
 .marker {
   background-color: black;
   width: 50px;

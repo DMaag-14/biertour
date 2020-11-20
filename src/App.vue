@@ -74,18 +74,21 @@ h6 {
 }
 
 #nav {
-  padding: 30px;
+  padding: 2rem 5rem;
   display: block;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.25rem;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: var(--yellow-default);
 }
 </style>

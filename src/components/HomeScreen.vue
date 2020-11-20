@@ -1,13 +1,13 @@
 <template>
   <div class="startseite">
     <!-- <div class="bgImg" :style="{ backgroundImage: `url(${bildStartseite.fields.file.url})` }"></div> -->
-    <p class="subtitelStartseite">
+    <p class="subtitel__startseite">
       {{subtitelStartseite}}
     </p>
     <h1>
       {{titelStartseite}}
     </h1>
-    <p class="leadStartseite">
+    <p class="lead__startseite">
       {{leadStartseite}}
     </p>
   </div>
@@ -38,12 +38,16 @@ h1{
 .startseite{
   margin-bottom: 4%;
 }
-.leadStartseite{
-  width:40%;
+.lead__startseite{
+  max-width: 45%;
+  font-size: 1.25rem;
+  line-height: 140%;
 }
 
-.subtitelStartseite{
-  margin-bottom: 0%;
+.subtitel__startseite{
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 </style>

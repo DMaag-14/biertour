@@ -123,6 +123,7 @@ img.bar__header__logo {
   padding: 40px 0px;
   z-index: 2000;
   color: var(--black-default-20);
+  margin-bottom: 4rem;
 }
 
 .bier__grid {
@@ -151,8 +152,7 @@ img.bar__header__logo {
   grid-row: 2;
 }
 
-@media (min-width: 1680px) {
-
+@media (min-width: 1800px) {
   .bier__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
