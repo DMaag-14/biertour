@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/map">Map</router-link>
+      <router-link to="/">Home</router-link>
     </div>
     <router-view/>
   </div>
@@ -40,7 +39,6 @@ html, body {
   text-align: left;
   padding: 0;
   margin: 0;
-  background-color: var(--black-background);
 }
 
 h1, h2, h3, h4, h5, h6 {

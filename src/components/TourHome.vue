@@ -35,5 +35,6 @@ export default {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border: none;
+    cursor: pointer;
   }
 </style>

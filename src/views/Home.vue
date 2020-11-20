@@ -1,29 +1,31 @@
 // Startmenu der Webseite
 <template>
-  <div class="home">
-    <div ref="container" class="startseite-container">
-        <div v-for="startseite in startseiten" :key="startseite">
-          <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
-        </div>
-    </div> 
+  <div class="background">
+    <div class="home">
+      <div ref="container" class="startseite-container">
+          <div v-for="startseite in startseiten" :key="startseite">
+            <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
+          </div>
+      </div> 
 
-    <div ref="container" class="startseite-tour-container">
-        <div v-for="tour in tours" :key="tour">
-          <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
-        </div>
+      <div ref="container" class="startseite-tour-container">
+          <div v-for="tour in tours" :key="tour.fields.tourTitel">
+            <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
+          </div>
+      </div>
+        <!-- <router-link to="/map"> !-->
+      
+        <!-- </router-link> !-->
+      <!-- <div class="startseite-tour-container">
+          <div class="startseite-tour">
+            <h3>Altstadttour</h3>
+            <p>Das Hier wär när d Beschribig</p>
+          </div>
+          <div class="startseite-tour">
+            <h3>Abendspaziergang</h3>
+          </div>
+      </div> -->
     </div>
-      <!-- <router-link to="/map"> !-->
-    
-       <!-- </router-link> !-->
-     <!-- <div class="startseite-tour-container">
-        <div class="startseite-tour">
-          <h3>Altstadttour</h3>
-          <p>Das Hier wär när d Beschribig</p>
-        </div>
-        <div class="startseite-tour">
-          <h3>Abendspaziergang</h3>
-        </div>
-     </div> -->
   </div>
 </template>
 
@@ -63,8 +65,8 @@ components: {
 
 
 // Hier CSS Elemente und Style für Home/Startseite
-<style scoped>
-body {
+<style>
+.background {
   height: 100vh;
   background-color: var(--white);
 }
@@ -83,6 +85,7 @@ body {
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
+  
 }
 
 .startseite-container {

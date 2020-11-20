@@ -160,6 +160,7 @@ body {
 .layout-container {
   display: block;
   width: 100%;
+  background-color: var(--black-background);
 }
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");

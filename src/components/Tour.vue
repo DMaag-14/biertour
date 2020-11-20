@@ -133,7 +133,7 @@ img.bar__header__logo {
 }
 
 .bier__grid .bier:nth-of-type(2){
-  margin-top: 60%;
+  margin-top: 52%;
 }
 
 .bier__grid .bier:nth-of-type(1) {
@@ -151,7 +151,7 @@ img.bar__header__logo {
   grid-row: 2;
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 1680px) {
 
   .bier__grid {
     display: grid;

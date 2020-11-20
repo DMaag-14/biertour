@@ -33,7 +33,7 @@ export default {
     bierHerkunft: String,
     bierArt: String,
     bierBrauerei: String,
-    bierNummer: String
+    bierNummer: Number
   }
 };
 
@@ -41,7 +41,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!-- <style scoped lang="scss"> !-->
-<style scoped >
+<style scoped>
   .bier {
     display: flex;
     flex-direction: column;
