@@ -5,7 +5,7 @@
     <div class="content">
       <div class="section-grid">
         <h1>Altstadttour</h1>
-        <p>Im Jahr 1191 wurde die Stadt Bern auf der Halbinsel, umgeben von der Aareschlaufe, von Herzog Berchtold V. von Zähringen gegründet. Die Zähringerstadt wurde ab 1200 etappenweise vergrössert: Im ersten Schritt von der Burg Nydegg bis zum Zytglogge (Zeitglockenturm), danach folgte die Stadterweiterung bis zum Käfigturm und noch etwas später kamen der Nydeggstalden und die Mattenenge hinzu.</p>
+        <p>Die Berner Altstadt ist umgeben von der wunderschönen Aarenschlaufe. Die Tour beginnt beim Zytglogge, eines der Wahrzeichne von Bern und kann bei bedarf wieder bei diesem Punkt enden, wenn du überhaupt soweit kommst. Schlendere von Bar zu Bar und erlebe die Untergrundbars und geniesse ein Bier von unserer Empfehlliste.</p>
       </div>
       <div v-for="bar in bars" :key="bar.fields.barTitel">
         <Bar :barSubtitel="bar.fields.barSubtitel" :barTitel="bar.fields.barTitel" :barBeschreibung="bar.fields.barBeschreibung" :barRandomFact="bar.fields.barRandomFact" :barLocation="bar.fields.barLocation" :barLogo="bar.fields.barLogo" :barBild="bar.fields.barBild" :barBier1="bar.fields.barBierReferenz[0]" :barBier2="bar.fields.barBierReferenz[1]" :barBier3="bar.fields.barBierReferenz[2]"/>
