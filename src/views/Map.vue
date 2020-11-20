@@ -75,47 +75,63 @@ export default {
        content_type: "bar"
     });
     let barContainer = result.items;
-    let activeBarId = barContainer[0].fields.barTitel;
+    let activeBarId = "";
+    let lonStart = barContainer[0].fields.barLocation.lon;
+    let lanStart = barContainer[0].fields.barLocation.lat;
+    map.flyTo({center: [lonStart, lanStart], zoom: 16.5, speed: 0.1});
+    let lonMarker;
+    let lanMarker;
+    let markerBarId;
+    for(let i = 0; i < barContainer.length; i++){
+      lonMarker = barContainer[i].fields.barLocation.lon;
+      lanMarker = barContainer[i].fields.barLocation.lat;
+      markerBarId = barContainer[i].fields.barTitel + "Marker";
+      var geojson = {
+              type: "FeatureCollection",
+              features: [{
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [lonMarker, lanMarker]
+                },
+                properties: {
+                  title: barContainer[i].fields.barTitel,
+                }
+              }]
+            };
+      geojson.features.forEach(function(marker){
+        var el = document.createElement('div');
+        el.className = "marker";
+        el.id = markerBarId;
+
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+      });
+      document.getElementById(markerBarId).style.visibility = "hidden";
+    }
+
+    
 
     window.onscroll = function(){
-      //console.log("es scrollt");
       for(var i = 0; i < barContainer.length; i++){
         var barId = barContainer[i].fields.barTitel;
-        //var bar = barContainer[i];
-        //console.log(barId);
         var element = document.getElementById(barId);
         var bounds = element.getBoundingClientRect();
         if(bounds.top < window.innerHeight && bounds.bottom > 0){
           if(barId === activeBarId){
             break;
           }else{
-            activeBarId = barId;
             let lon = barContainer[i].fields.barLocation.lon;
             let lan = barContainer[i].fields.barLocation.lat;
-            map.flyTo({center: [lon, lan], zoom: 16.5});
+            map.flyTo({center: [lon, lan], zoom: 16.5, speed: 0.1});
             console.log(lon + " , " + lan);
-            var geojson = {
-                type: "FeatureCollection",
-                features: [{
-                  type: "Feature",
-                  geometry: {
-                    type: "Point",
-                    coordinates: [lon, lan]
-                  },
-                  properties: {
-                    title: barId,
-                  }
-                }]
-            };
-            geojson.features.forEach(function(marker){
-              var el = document.createElement('div');
-              el.className = "marker";
-
-              new mapboxgl.Marker(el)
-                .setLngLat(marker.geometry.coordinates)
-                .addTo(map);
-            }); 
-            break;
+            console.log("set Marker");
+            markerBarId = barId + "Marker";
+            let oldBarId = activeBarId + "Marker";
+            document.getElementById(markerBarId).style.visibility = "visible";
+            activeBarId = barId;
+            document.getElementById(oldBarId).style.visibility = "hidden";
           }          
         }
       }
@@ -178,6 +194,7 @@ body {
   flex-direction: column;
   width: 60%;
   margin-left: 40%;
+  color: var(--white);
 }
 
 .section-grid {
@@ -197,9 +214,10 @@ body {
 }
 
 .marker {
-  background-color: black;
-  width: 50px;
-  height: 50px;
+  background-image: url("../assets/marker.png");
+  background-size: cover;
+  width: 32px;
+  height: 40px;
   cursor: pointer;
 }
 
