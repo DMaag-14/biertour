@@ -1,19 +1,19 @@
 // Startmenu der Webseite
 <template>
   <div class="background">
-    <div class="home">
-      <div ref="container" class="startseite-container">
-          <div v-for="startseite in startseiten" :key="startseite">
-            <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
-          </div>
-      </div> 
+      <div class="container home">
+        <div ref="container" class="startseite-container">
+            <div v-for="startseite in startseiten" :key="startseite">
+              <Startseite :titelStartseite="startseite.fields.titelStartseite" :leadStartseite="startseite.fields.leadStartseite" :subtitelStartseite="startseite.fields.subtitelStartseite" />
+            </div>
+        </div> 
 
-      <div ref="container" class="startseite-tour-container">
-          <div v-for="tour in tours" :key="tour.fields.tourTitel">
-            <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
-          </div>
+        <div ref="container" class="startseite-tour-container">
+            <div v-for="tour in tours" :key="tour.fields.tourTitel">
+              <Tour :tourTitel="tour.fields.tourTitel" :tourBeschreibung="tour.fields.tourBeschreibung" :tourKurzbeschrieb="tour.fields.tourKurzbeschrieb" />
+            </div>
+        </div>
       </div>
-    </div>
     <div class="bg-img"></div>
   </div>
 </template>
@@ -71,6 +71,8 @@ components: {
   z-index: 1;
   background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.8)), url('../assets/bg.jpg');
   filter: saturate(0.5);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .startseite-tour-container{
@@ -82,11 +84,9 @@ components: {
   padding: 2rem 0;
 }
 
-.home{
+.container.home{
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin: 0 auto;
   z-index: 2;
   position: relative;
 }

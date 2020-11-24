@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
+    <div class="nav-container">
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/impressum">Impressum</router-link>
+      </nav>
     </div>
     <router-view/>
   </div>
@@ -73,22 +76,38 @@ h6 {
   font-size: 1rem;
 }
 
-#nav {
-  padding: 2rem 5rem;
-  display: block;
+.nav-container {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
 }
 
-#nav a {
+.container {
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+}
+
+nav {
+  padding: 2rem 0rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav a {
   color: var(--white);
   text-decoration: none;
   font-size: 1.25rem;
+  margin-right: 2rem;
 }
 
-#nav a.router-link-exact-active {
+nav a:last-of-type {
+  margin-right: 0rem;
+}
+
+nav a.router-link-exact-active {
   color: var(--yellow-default);
 }
 </style>

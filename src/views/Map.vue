@@ -181,7 +181,7 @@ body {
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");
 .map {
-  height: 95vh;
+  height: 92vh;
   width: 35%;
   display: block;
   position: fixed;
