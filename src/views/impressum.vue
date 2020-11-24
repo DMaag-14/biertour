@@ -21,7 +21,7 @@
               <p><strong>Dominik Maag</strong>, Konzept, Back-End Entwickler</p>
               <p><strong>Joel Lüthi</strong>, Konzept, Webdesign und Front-End Entwickler</p>
               <p><strong>Jeannine Kämpfer</strong>, Konzept, Webdesign, Front-End Entwicklerin</p>
-              <p>© 2020, HSLUtest</p>
+              <p>© 2020, HSLU</p>
           </section>
 
       </div>
